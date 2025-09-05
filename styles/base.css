@@ -46,6 +46,24 @@ header {
     padding: var(--padding);
 }
 
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+
+.profile-pic {
+    max-width: 150px;
+    border-radius: var(--small-radius);
+    object-fit: cover;
+}
+
 .highlight {
     color: var(--secondary-color);
 }
