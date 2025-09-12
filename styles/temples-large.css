@@ -1,0 +1,31 @@
+/* Larger view: horizontal nav + multi-column grid */
+
+.hamburger {
+    display: none;
+}
+
+/* hide hamburger on large screens */
+
+.nav__list {
+    display: flex !important;
+    flex-direction: row;
+    gap: .25rem;
+    justify-content: flex-end;
+    padding: 0;
+}
+
+.site-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.album {
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    margin: 1.25rem 0 1.5rem;
+}
