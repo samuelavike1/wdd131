@@ -85,11 +85,11 @@ h2 {
     border-radius: .5rem;
 }
 
-/* .nav__link:hover,
+.nav__link:hover,
 .nav__link:focus {
     background: rgba(255, 255, 255, .15);
     outline: none;
-} */
+}
 
 /* Main */
 main {

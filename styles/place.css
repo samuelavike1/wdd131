@@ -1,0 +1,177 @@
+/* ===== CSS Variables (global) ===== */
+:root {
+    --brand-red: #b90f2f;
+    --brand-green: #1e7a3b;
+    --ink: #0f172a;
+    --ink-muted: #334155;
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --shadow: 0 10px 24px rgba(0, 0, 0, .18);
+    --radius: 16px;
+
+    --container-max: 1200px;
+    --gutter: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+}
+
+body {
+    font-family: "Lato", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.55;
+    background: #fff;
+}
+
+/* ===== Header ===== */
+.site-header {
+    background: var(--brand-red);
+    color: #fff;
+    text-align: center;
+    padding: 1.25rem 1rem .75rem;
+    border-bottom: .5rem solid var(--brand-green);
+}
+
+.place-title {
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: .5px;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    position: relative;
+    max-width: var(--container-max);
+    margin: 0 auto;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Overlay cards – mobile: stacked underneath image (natural flow) */
+.overlay-card {
+    margin: 1.25rem var(--gutter);
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem 1.25rem;
+}
+
+.overlay-card h2 {
+    margin: 0 0 .75rem;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.kv {
+    margin: 0;
+}
+
+.kv>div {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: .75rem;
+    padding: .2rem 0;
+}
+
+.kv dt {
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.kv dd {
+    margin: 0;
+    color: var(--ink-muted);
+}
+
+/* Small SVG weather icon visible in mobile */
+.wx-icon {
+    width: 52px;
+    height: 52px;
+    fill: var(--brand-green);
+    display: block;
+    margin: .25rem auto .75rem;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+    margin-top: 2rem;
+    background: var(--brand-red);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    border-top: .5rem solid var(--brand-green);
+}
+
+.site-footer p {
+    margin: .2rem 0;
+}
+
+/* ====== Wider view layout ====== */
+@media (min-width: 900px) {
+    .hero {
+        padding: 0 var(--gutter) 2rem;
+    }
+
+    .hero picture,
+    .hero img {
+        border-radius: 0;
+    }
+
+    /* Make the hero container the positioning context for overlays */
+    .hero {}
+
+    .hero picture {
+        display: block;
+    }
+
+    /* Overlay cards positioned over the image like the wireframe */
+    .overlay-card {
+        position: absolute;
+        width: clamp(260px, 26vw, 360px);
+        margin: 0;
+    }
+
+    .overlay-card.data {
+        left: calc(var(--gutter) * 2);
+        top: clamp(90px, 12vh, 140px);
+    }
+
+    .overlay-card.weather {
+        right: calc(var(--gutter) * 2);
+        bottom: clamp(40px, 10vh, 80px);
+    }
+
+    /* Hide the inline SVG icon; use a pseudo-element after the Weather heading instead */
+    .wx-icon {
+        display: none;
+    }
+
+    .weather h2::after {
+        content: "⛅";
+        /* required: pseudo-element weather icon */
+        font-size: 1.25em;
+        margin-left: .4rem;
+        line-height: 1;
+    }
+
+    /* Give “Data” and “Weather” headings a colored tag look (like example) */
+    .overlay-card h2 {
+        background: var(--brand-green);
+        color: #fff;
+        padding: .35rem .75rem;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+    }
+}

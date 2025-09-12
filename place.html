@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Madagascar</title>
+
+    <!-- Fonts are optional; keep it simple -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/place.css" />
+    <script src="scripts/place.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="place-title">Madagascar</h1>
+    </header>
+
+    <main>
+      <!-- HERO: uses picture/srcset with WebP (Unsplash can serve webp with fm=webp) -->
+      <section class="hero" aria-label="Scenic photo of Madagascar wildlife">
+        <picture>
+          <!-- Large/Desktop -->
+          <source
+            media="(min-width: 900px)"
+            srcset="
+              https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&auto=format&fit=crop&w=1600&fm=webp 1600w,
+              https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&auto=format&fit=crop&w=1200&fm=webp 1200w
+            "
+            type="image/webp"
+          />
+          <!-- Medium/Tablet -->
+          <source
+            media="(min-width: 600px)"
+            srcset="
+              https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&auto=format&fit=crop&w=1200&fm=webp 1200w,
+              https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&auto=format&fit=crop&w=900&fm=webp   900w
+            "
+            type="image/webp"
+          />
+          <!-- Mobile default -->
+          <img
+            src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&auto=format&fit=crop&w=800&fm=webp"
+            alt="Ring-tailed lemur on a branch"
+            width="1600"
+            height="900"
+            loading="eager"
+          />
+        </picture>
+
+        <!-- Overlay cards are positioned in wide view; stacked in mobile -->
+        <div class="overlay-card data" aria-labelledby="data-heading">
+          <h2 id="data-heading">Data</h2>
+          <dl class="kv">
+            <div>
+              <dt>Area:</dt>
+              <dd>587,041 sq km</dd>
+            </div>
+            <div>
+              <dt>Population:</dt>
+              <dd>27,691,018</dd>
+            </div>
+            <div>
+              <dt>Capital:</dt>
+              <dd>Antananarivo</dd>
+            </div>
+            <div>
+              <dt>Languages:</dt>
+              <dd>Malagasy, French</dd>
+            </div>
+            <div>
+              <dt>Currency:</dt>
+              <dd>Malagasy Ariary</dd>
+            </div>
+            <div>
+              <dt>Time Zone:</dt>
+              <dd>UTC+3</dd>
+            </div>
+            <div>
+              <dt>Calling Code:</dt>
+              <dd>+261</dd>
+            </div>
+            <div>
+              <dt>Internet TLD:</dt>
+              <dd>.mg</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="overlay-card weather" aria-labelledby="weather-heading">
+          <h2 id="weather-heading">Weather</h2>
+
+          <!-- SVG icon is shown in mobile view (hidden in wide view, where a ::after pseudo-element is used) -->
+          <svg class="wx-icon" viewBox="0 0 64 64" aria-hidden="true">
+            <circle cx="22" cy="22" r="10"></circle>
+            <path
+              d="M40 28c8 0 12 5 12 10s-4 10-12 10H22c-7 0-10-4-10-8s3-8 9-9c1-7 8-13 19-3z"
+            ></path>
+          </svg>
+
+          <dl class="kv">
+            <div>
+              <dt>Temperature:</dt>
+              <dd><span id="temp">10</span> °C</dd>
+            </div>
+            <div>
+              <dt>Conditions:</dt>
+              <dd>Partly Cloudy</dd>
+            </div>
+            <div>
+              <dt>Wind:</dt>
+              <dd><span id="wind">5</span> km/h</dd>
+            </div>
+            <div>
+              <dt>Wind&nbsp;Chill:</dt>
+              <dd><span id="windchill">N/A</span></dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>©<span id="year"></span> Rubia Magdalena Francesco • Madagascar</p>
+      <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+  </body>
+</html>
