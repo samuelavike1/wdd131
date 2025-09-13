@@ -30,31 +30,21 @@
       <!-- HERO: uses picture/srcset with WebP (Unsplash can serve webp with fm=webp) -->
       <section class="hero" aria-label="Scenic photo of Madagascar wildlife">
         <picture>
-          <!-- Large/Desktop -->
           <source
             media="(min-width: 900px)"
-            srcset="
-              https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&auto=format&fit=crop&w=1600&fm=webp 1600w,
-              https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&auto=format&fit=crop&w=1200&fm=webp 1200w
-            "
+            srcset="images/madagascar-hero-large.webp"
             type="image/webp"
           />
-          <!-- Medium/Tablet -->
           <source
             media="(min-width: 600px)"
-            srcset="
-              https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&auto=format&fit=crop&w=1200&fm=webp 1200w,
-              https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&auto=format&fit=crop&w=900&fm=webp   900w
-            "
+            srcset="images/madagascar-hero-medium.webp"
             type="image/webp"
           />
-          <!-- Mobile default -->
           <img
-            src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&auto=format&fit=crop&w=800&fm=webp"
-            alt="Ring-tailed lemur on a branch"
-            width="1600"
-            height="900"
-            loading="eager"
+            src="images/madagascar-hero-small.webp"
+            alt="Ring-tailed lemur in Madagascar"
+            width="800"
+            height="600"
           />
         </picture>
 
