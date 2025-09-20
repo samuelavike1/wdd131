@@ -1,0 +1,157 @@
+:root {
+    --brand: #3b0066;
+    --brand-ink: #ffffff;
+    --ink: #1d1d1f;
+    --muted: #6b7280;
+    --card: #ffffff;
+    --ring: #e5e7eb;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: #fafafa;
+    font: 16px/1.5 "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+h1,
+h2 {
+    font-family: "Poppins", system-ui, sans-serif;
+    margin: 0;
+}
+
+/* Header / nav */
+.site-header {
+    background: var(--brand);
+    color: var(--brand-ink);
+    padding: .85rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.brand__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.hamburger {
+    margin-left: auto;
+    font-size: 1.5rem;
+    background: transparent;
+    border: 0;
+    color: var(--brand-ink);
+    cursor: pointer;
+}
+
+.nav {
+    width: 100%;
+}
+
+.nav__list {
+    list-style: none;
+    margin: 0;
+    padding: .5rem 0 0;
+    display: none;
+    /* mobile: hidden until hamburger toggles */
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.nav__list.open {
+    display: flex;
+}
+
+.nav__link {
+    display: block;
+    padding: .6rem 0.75rem;
+    color: var(--brand-ink);
+    text-decoration: none;
+    border-radius: .5rem;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+    background: rgba(255, 255, 255, .15);
+    outline: none;
+}
+
+/* Main */
+main {
+    max-width: 1100px;
+    margin: 1rem auto 3.5rem;
+    padding: 0 1rem;
+}
+
+.page-title {
+    text-align: center;
+    margin: 1rem 0 1.25rem;
+    font-size: 1.4rem;
+}
+
+/* Album grid */
+.album {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* one column on mobile */
+    gap: 1.25rem;
+}
+
+/* Card */
+.card {
+    background: var(--card);
+    border: 1px solid var(--ring);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card figcaption {
+    padding: .75rem .9rem 1rem;
+    text-align: left;
+}
+
+.card__title {
+    margin: 0 0 .35rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.card figcaption p {
+    margin: .15rem 0;
+    color: var(--muted);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--brand);
+    color: var(--brand-ink);
+    text-align: center;
+    padding: 1rem .75rem;
+    line-height: 1.4;
+    font-size: .95rem;
+}
+
+.site-footer .dot {
+    margin: 0 .35rem;
+}

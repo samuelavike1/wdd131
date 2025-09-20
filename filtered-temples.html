@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Temple Album — Filtered</title>
+    <meta
+      name="description"
+      content="Temple Photo Album with filters and lazy loading."
+    />
+    <meta name="author" content="Samuel Apusiyine Avike" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Mobile-first CSS, then large overrides -->
+    <link rel="stylesheet" href="styles/filtered-temples.css" />
+    <link
+      rel="stylesheet"
+      href="styles/filtered-temples-large.css"
+      media="(min-width: 760px)"
+    />
+
+    <script defer src="scripts/filtered-temples.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <h1 class="brand__title">Temple Album</h1>
+      </div>
+
+      <!-- Hamburger is visible only on mobile (CSS) -->
+      <button
+        id="hamburger"
+        class="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        ☰
+      </button>
+
+      <nav class="nav" aria-label="Primary">
+        <ul id="primary-nav" class="nav__list">
+          <li><a class="nav__link" href="#" data-filter="home">Home</a></li>
+          <li><a class="nav__link" href="#" data-filter="old">Old</a></li>
+          <li><a class="nav__link" href="#" data-filter="new">New</a></li>
+          <li><a class="nav__link" href="#" data-filter="large">Large</a></li>
+          <li><a class="nav__link" href="#" data-filter="small">Small</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2 id="page-title" class="page-title">Home</h2>
+
+      <!-- Cards get injected here -->
+      <section id="album" class="album" aria-live="polite"></section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        ©<span id="year"></span>
+        <span class="name">🧑‍💻 Samuel Apusiyine Avike 🧑‍💻</span>
+        <span class="dot">•</span> <span class="loc">Ghana</span>
+      </p>
+      <p>Last Modification: <span id="last-modified"></span></p>
+    </footer>
+  </body>
+</html>
