@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Review Submitted</title>
+    <meta name="description" content="Review form." />
+    <meta name="author" content="Samuel Apusiyine Avike" />
+    <link rel="stylesheet" href="styles/review.css" />
+    <script defer src="scripts/review.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Product Review</h1>
+    </header>
+
+    <main class="wrap">
+      <section class="card">
+        <h2 class="label">Submission Details</h2>
+        <div id="summary"></div>
+      </section>
+
+      <section class="card">
+        <h2 class="label">Your Submission Counter</h2>
+        <p id="counter" style="font-size: 22px; font-weight: 700"></p>
+        <p style="font-size: 18px">
+          This uses <code>localStorage</code> and is unique to this browser.
+        </p>
+      </section>
+
+      <form action="form.html" class="card" style="text-align: center">
+        <input type="submit" class="btn" value="Submit Another Review" />
+      </form>
+    </main>
+
+    <footer class="footer">
+      <p>
+        ©2024 <span class="flower">🌺</span> Rubia Magdalena Francesco
+        <span class="flower">🌺</span><br />Madagascar
+      </p>
+      <p>Last Modification: <span id="last-mod"></span></p>
+    </footer>
+  </body>
+</html>

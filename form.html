@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product Review Form</title>
+    <link rel="stylesheet" href="styles/review.css" />
+    <meta name="description" content="Review form." />
+    <meta name="author" content="Samuel Apusiyine Avike" />
+    <script defer src="scripts/form.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Product Review</h1>
+    </header>
+
+    <main class="wrap">
+      <form class="card" method="get" action="review.html">
+        <h2 class="sr-only">Product Review Form</h2>
+
+        <!-- Product Name -->
+        <label for="product">Product Name</label>
+        <select id="product" name="product" required>
+          <option value="" disabled selected>Choose a Product ...</option>
+        </select>
+
+        <!-- Overall Rating -->
+        <p class="label">Overall Rating</p>
+        <div class="stars-row" aria-hidden="true">
+          <span>★</span><span>★★</span><span>★★★</span><span>★★★★</span
+          ><span>★★★★★</span>
+        </div>
+        <div class="radios-row" role="radiogroup" aria-label="Overall Rating">
+          <input type="radio" id="r1" name="rating" value="1" required />
+          <label for="r1" class="sr-only">1 star</label>
+
+          <input type="radio" id="r2" name="rating" value="2" />
+          <label for="r2" class="sr-only">2 stars</label>
+
+          <input type="radio" id="r3" name="rating" value="3" />
+          <label for="r3" class="sr-only">3 stars</label>
+
+          <input type="radio" id="r4" name="rating" value="4" />
+          <label for="r4" class="sr-only">4 stars</label>
+
+          <input type="radio" id="r5" name="rating" value="5" />
+          <label for="r5" class="sr-only">5 stars</label>
+        </div>
+
+        <!-- Date of Installation -->
+        <label for="installed">Date of Installation</label>
+        <input type="date" id="installed" name="installed" required />
+
+        <!-- Useful Features -->
+        <p class="label">
+          Which features did you find useful in the product?<br /><em
+            >(Check all that apply)</em
+          >
+        </p>
+        <div class="checks">
+          <div>
+            <input
+              type="checkbox"
+              id="f-dur"
+              name="features"
+              value="Durability"
+            /><label for="f-dur">Durability</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="f-ease"
+              name="features"
+              value="Ease of Use"
+            /><label for="f-ease">Ease of Use</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="f-perf"
+              name="features"
+              value="Performance"
+            /><label for="f-perf">Performance</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="f-design"
+              name="features"
+              value="Design"
+            /><label for="f-design">Design</label>
+          </div>
+        </div>
+
+        <!-- Written Review -->
+        <label for="review"
+          >Written Review <span class="optional">(Optional)</span></label
+        >
+        <textarea id="review" name="review" rows="8"></textarea>
+
+        <!-- Your Name -->
+        <label for="username"
+          >Your Name <span class="optional">(Optional)</span></label
+        >
+        <input type="text" id="username" name="username" />
+
+        <!-- Submit -->
+        <input type="submit" class="btn" value="Post Review" />
+      </form>
+    </main>
+
+    <footer class="footer">
+      <p>
+        ©2024 <span class="flower">🌺</span> Rubia Magdalena Francesco
+        <span class="flower">🌺</span><br />Madagascar
+      </p>
+      <p>Last Modification: <span id="last-mod"></span></p>
+    </footer>
+  </body>
+</html>
