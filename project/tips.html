@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Study Tips — Campus Study Planner</title>
+    <meta
+      name="description"
+      content="Actionable study strategies: time management, active recall, spaced repetition, and focus."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">CP</div>
+        <div>
+          <h1>Study Tips</h1>
+          <p class="tagline">Quick wins you can use today.</p>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Main">
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          Menu
+        </button>
+        <ul id="navLinks">
+          <li><a href="./index.html">Home</a></li>
+          <li><a data-active href="./tips.html">Study Tips</a></li>
+          <li><a href="./tools.html">Tools</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li class="refs">
+            <a href="./references.html" rel="nofollow">References</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="wrap">
+      <section aria-labelledby="tips-h">
+        <h2 id="tips-h">Core Strategies</h2>
+
+        <details class="tip" open>
+          <summary><strong>Time Blocking</strong></summary>
+          <p>
+            Plan your day in focused blocks (50–90 minutes) with short breaks.
+            Reserve harder tasks for your peak energy time.
+          </p>
+        </details>
+
+        <details class="tip">
+          <summary><strong>Active Recall</strong></summary>
+          <p>
+            Regularly quiz yourself without notes. Turn headings into questions;
+            answer out loud before checking.
+          </p>
+        </details>
+
+        <details class="tip">
+          <summary><strong>Spaced Repetition</strong></summary>
+          <p>
+            Review material at increasing intervals (1 day, 3 days, 1 week, 2
+            weeks) to strengthen memory.
+          </p>
+        </details>
+
+        <details class="tip">
+          <summary><strong>Distraction Management</strong></summary>
+          <p>
+            Silence notifications, use a timer, and study in a consistent place.
+            Keep only what you need on the desk.
+          </p>
+        </details>
+
+        <figure class="wide">
+          <img
+            loading="lazy"
+            width="960"
+            height="540"
+            src="./images/planner.jpg"
+            alt="Notebook with study plan"
+          />
+          <figcaption>Consistent, small actions compound over time.</figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small
+        >© <span id="year"></span> Campus Study Planner •
+        <a href="./references.html" rel="nofollow">References</a></small
+      >
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

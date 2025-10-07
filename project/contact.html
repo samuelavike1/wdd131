@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact — Campus Study Planner</title>
+    <meta
+      name="description"
+      content="Send feedback or ask a question about the Campus Study Planner."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">CP</div>
+        <div>
+          <h1>Contact</h1>
+          <p class="tagline">Questions, feedback, or bug reports.</p>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Main">
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          Menu
+        </button>
+        <ul id="navLinks">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./tips.html">Study Tips</a></li>
+          <li><a href="./tools.html">Tools</a></li>
+          <li><a data-active href="./contact.html">Contact</a></li>
+          <li class="refs">
+            <a href="./references.html" rel="nofollow">References</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="wrap">
+      <section class="tool" aria-labelledby="contact-h">
+        <h2 id="contact-h">Send a Message</h2>
+        <form id="contactForm" novalidate>
+          <div class="row">
+            <label for="name"
+              >Full Name
+              <input id="name" name="name" autocomplete="name" required />
+            </label>
+            <label for="email"
+              >Email
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+            </label>
+          </div>
+
+          <div class="row">
+            <label for="program"
+              >Program
+              <select id="program" name="program" required>
+                <option value="">Choose…</option>
+                <option>Computer Science</option>
+                <option>Business</option>
+                <option>Engineering</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <fieldset>
+              <legend>Preferred Days</legend>
+              <label
+                ><input type="checkbox" name="days" value="Weekdays" />
+                Weekdays</label
+              >
+              <label
+                ><input type="checkbox" name="days" value="Weekends" />
+                Weekends</label
+              >
+            </fieldset>
+          </div>
+
+          <label for="message"
+            >Message
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              minlength="10"
+              required
+            ></textarea>
+          </label>
+
+          <label class="consent">
+            <input type="checkbox" id="consent" required />
+            I agree to have this information stored locally on my device.
+          </label>
+
+          <button class="btn" type="submit">Send</button>
+          <p
+            id="contactResult"
+            class="muted"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small
+        >© <span id="year"></span> Campus Study Planner •
+        <a href="./references.html" rel="nofollow">References</a></small
+      >
+    </footer>
+
+    <script type="module">
+      import { initGlobal } from "./js/main.js";
+      initGlobal();
+
+      const form = document.getElementById("contactForm");
+      const result = document.getElementById("contactResult");
+
+      const lsKey = "csp_contact_last";
+      const save = (obj) => localStorage.setItem(lsKey, JSON.stringify(obj));
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+
+        // Basic validation (conditional branching)
+        if (!form.checkValidity()) {
+          result.textContent = "Please complete all required fields.";
+          form.reportValidity();
+          return;
+        }
+        const message = (data.get("message") || "").trim();
+        if (message.length < 10) {
+          result.textContent = "Message must be at least 10 characters.";
+          return;
+        }
+
+        const payload = {
+          name: data.get("name").trim(),
+          email: data.get("email").trim(),
+          program: data.get("program"),
+          days: data.getAll("days"),
+          message,
+          ts: new Date().toISOString(),
+        };
+
+        save(payload);
+        result.textContent = `Thanks, ${
+          payload.name
+        }! Your message was saved locally at ${new Date(
+          payload.ts
+        ).toLocaleString()}.`;
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

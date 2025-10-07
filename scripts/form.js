@@ -1,5 +1,5 @@
-// Populate select with products and set last modified footer.
-// No star animations; radios are plain circles.
+/* Populate select with products and set last modified footer.
+ No star animations; radios are plain circles.*/
 
 const products = [
   { id: "fc-1888", name: "flux capacitor", averagerating: 4.5 },

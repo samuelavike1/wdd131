@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tools — Campus Study Planner</title>
+    <meta
+      name="description"
+      content="Weekly schedule, to-do list, and GPA calculator."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">CP</div>
+        <div>
+          <h1>Planner Tools</h1>
+          <p class="tagline">Schedule • Tasks • GPA</p>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Main">
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          Menu
+        </button>
+        <ul id="navLinks">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./tips.html">Study Tips</a></li>
+          <li><a data-active href="./tools.html">Tools</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li class="refs">
+            <a href="./references.html" rel="nofollow">References</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="wrap tools-grid">
+      <!-- Weekly Schedule -->
+      <section class="tool" aria-labelledby="sched-h">
+        <h2 id="sched-h">Weekly Schedule</h2>
+        <form id="scheduleForm" class="row">
+          <label>Title <input required name="title" /></label>
+          <label
+            >Day
+            <select name="day" required>
+              <option value="">Choose…</option>
+              <option>Mon</option>
+              <option>Tue</option>
+              <option>Wed</option>
+              <option>Thu</option>
+              <option>Fri</option>
+              <option>Sat</option>
+              <option>Sun</option>
+            </select>
+          </label>
+          <label>Start <input required name="start" type="time" /></label>
+          <label>End <input required name="end" type="time" /></label>
+          <button class="btn" type="submit">Add Block</button>
+          <button class="btn-outline" type="button" id="clearWeek">
+            Clear Week
+          </button>
+        </form>
+        <div id="scheduleGrid" class="schedule-grid" aria-live="polite"></div>
+      </section>
+
+      <!-- To-Do List -->
+      <section class="tool" aria-labelledby="todo-h">
+        <h2 id="todo-h">To-Do List</h2>
+        <form id="todoForm" class="row">
+          <label>Task <input required name="task" /></label>
+          <label>Due <input name="due" type="date" /></label>
+          <label
+            >Priority
+            <select name="priority">
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+          </label>
+          <button class="btn" type="submit">Add Task</button>
+        </form>
+
+        <div class="filters">
+          <label
+            >Show
+            <select id="filterSelect">
+              <option value="all">All</option>
+              <option value="today">Today</option>
+              <option value="completed">Completed</option>
+              <option value="open">Open</option>
+            </select>
+          </label>
+        </div>
+
+        <ul id="todoList" class="todo-list" aria-live="polite"></ul>
+      </section>
+
+      <!-- GPA Calculator -->
+      <section class="tool" aria-labelledby="gpa-h">
+        <h2 id="gpa-h">GPA Calculator</h2>
+        <form id="gpaForm" class="row">
+          <label>Course <input required name="course" /></label>
+          <label
+            >Credits
+            <input required name="credits" type="number" min="0" step="0.5"
+          /></label>
+          <label
+            >Grade
+            <input name="grade" placeholder="A, B+, 86…" required />
+          </label>
+          <button class="btn" type="submit">Add Course</button>
+          <button class="btn-outline" type="button" id="clearGPA">Clear</button>
+        </form>
+
+        <table class="table" aria-describedby="gpa-desc">
+          <caption id="gpa-desc">
+            Added courses (edit or remove as needed).
+          </caption>
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>Credits</th>
+              <th>Grade</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="gpaTableBody"></tbody>
+        </table>
+
+        <div class="gpa-summary">
+          <p><strong>Current GPA:</strong> <span id="currentGpa">0.00</span></p>
+          <p class="muted" id="gpaNote"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small
+        >© <span id="year"></span> Campus Study Planner •
+        <a href="./references.html" rel="nofollow">References</a></small
+      >
+    </footer>
+
+    <script type="module">
+      import { initGlobal } from "./js/main.js";
+      import { initSchedule } from "./js/schedule.js";
+      import { initTodo } from "./js/todo.js";
+      import { initGpa } from "./js/gpa.js";
+      initGlobal();
+      initSchedule();
+      initTodo();
+      initGpa();
+    </script>
+  </body>
+</html>

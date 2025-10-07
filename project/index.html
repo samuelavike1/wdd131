@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Campus Study Planner — Home</title>
+    <meta
+      name="description"
+      content="Plan your week, track tasks, and estimate your GPA with a simple, responsive study planner."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">CP</div>
+        <div>
+          <h1>Campus Study Planner</h1>
+          <p class="tagline">Plan smarter in minutes.</p>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Main">
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          Menu
+        </button>
+        <ul id="navLinks">
+          <li><a data-active href="./index.html">Home</a></li>
+          <li><a href="./tips.html">Study Tips</a></li>
+          <li><a href="./tools.html">Tools</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li class="refs">
+            <a href="./references.html" rel="nofollow">References</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="hero-content">
+          <h2>Everything you need to plan your week and track progress</h2>
+          <p>
+            Use the weekly schedule, to-do list, and GPA calculator—built with
+            accessible, responsive design.
+          </p>
+          <p><a class="btn" href="./tools.html">Open the Tools</a></p>
+        </div>
+        <figure class="hero-figure">
+          <!-- Lazy-loaded, optimized placeholder (replace with your compressed images) -->
+          <img
+            loading="lazy"
+            width="720"
+            height="480"
+            src="./images/student-planning-week.webp"
+            alt="Students planning their week"
+          />
+          <figcaption>Plan, track, and improve.</figcaption>
+        </figure>
+      </section>
+
+      <section class="features">
+        <h3>What’s inside</h3>
+        <div class="cards">
+          <article class="card">
+            <h4>Weekly Schedule</h4>
+            <p>
+              Visualize Mon–Sun with time blocks. Add classes & study sessions.
+            </p>
+          </article>
+          <article class="card">
+            <h4>To-Do List</h4>
+            <p>
+              Organize priorities with due dates and filters. Saved to your
+              device.
+            </p>
+          </article>
+          <article class="card">
+            <h4>GPA Calculator</h4>
+            <p>Enter courses, credits, and grades to estimate your GPA.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small
+        >© <span id="year"></span> Campus Study Planner •
+        <a href="./references.html" rel="nofollow">References</a></small
+      >
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
